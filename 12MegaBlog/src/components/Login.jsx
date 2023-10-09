@@ -10,7 +10,7 @@ import {useForm} from 'react-hook-form'
 function Login() {
     const navigate=useNavigate()
     const dispatch=useDispatch()
-    const {resgister,handleSubmit}=useForm()
+    const {register,handleSubmit}=useForm()
     const [error,setError]=useState("")
 
     const login=async(data)=>{
@@ -51,7 +51,7 @@ function Login() {
                 label="Email:"
                 placegolder="Enter your Email"
                 type="email"
-                {...resgister("email",{
+                {...register("email",{
                     required:true,
                     validate:{
                         matchPatern:(value)=> /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g.test(value) || "Email address must be a valid address",
@@ -62,7 +62,7 @@ function Login() {
                 label="Password:"
                 type="password"
                 placegolder="Enter your password"
-                {...resgister("password",{
+                {...register("password",{
                     required:true
                 })}
                 />

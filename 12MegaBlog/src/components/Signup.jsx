@@ -59,7 +59,7 @@ function Signup() {
                 label="Email:"
                 placegolder="Enter your Email"
                 type="email"
-                {...resgister("email",{
+                {...register("email",{
                     required:true,
                     validate:{
                         matchPatern:(value)=> /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g.test(value) || "Email address must be a valid address",
